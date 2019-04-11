@@ -14,7 +14,7 @@ require_once 'CSVExporter.php';
 require_once 'GraphMLExporter.php';
 
 $path = null; // file/folder to be parsed
-$format = Exporter::JEXP_FORMAT; // format to use for export (default: jexp)
+$format = Exporter::COMBINED_FORMAT; // format to use for export (default: jexp)
 $nodefile = CSVExporter::NODE_FILE; // name of node file when using CSV format (default: nodes.csv)
 $relfile = CSVExporter::REL_FILE; // name of relationship file when using CSV format (default: rels.csv)
 $outfile = GraphMLExporter::GRAPHML_FILE; // name of output file when using GraphML format (default: graph.xml)
@@ -182,7 +182,7 @@ function parse_file( $path, $exporter) : int {
   echo "Parsing file ", $finfo->getPathname(), PHP_EOL;
 
   try {
-    $ast = ast\parse_file( $path, $version = 30);
+    $ast = ast\parse_file( $path, $version = 60);
 
     // The above may throw a ParseError. We only export to the output
     // file(s) if that didn't happen.

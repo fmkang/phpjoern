@@ -23,6 +23,8 @@ abstract class Exporter {
   const JEXP_FORMAT = 1;
   /** Constant for GraphML format (supported by many tools) */
   const GRAPHML_FORMAT = 2;
+  /** Constant for combined format (to be used with phpast2cpg (JSJoern version) and neo4j) */
+  const COMBINED_FORMAT = 100;
 
   /** Labels */
   const LABEL_FS = "Filesystem";
