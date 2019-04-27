@@ -191,7 +191,7 @@ function parse_file( $path, $exporter) : int {
     $astroot = $exporter->export( $ast, $tnode);
     $exporter->store_rel( $tnode, $astroot, "PARENT_OF");
     $exporter->store_rel( $fnode, $tnode, "FILE_OF");
-    //echo ast_dump( $ast), PHP_EOL;
+    echo ast_dump( $ast), PHP_EOL;
   }
   catch( ParseError $e) {
     $fnode = -1;
